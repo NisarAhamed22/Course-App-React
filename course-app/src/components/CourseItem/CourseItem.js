@@ -1,6 +1,15 @@
+import React, { useState } from "react";
 import "./CourseItem.css";
 
 const CourseItem = (props) => {
-  return <li className="goal-item">{props.item} </li>;
+  //const [deleteItem]
+  const getId = () => {
+    props.ondelete(props.id);
+  };
+  return (
+    <li className="goal-item" onClick={getId}>
+      {props.item}
+    </li>
+  );
 };
 export default CourseItem;

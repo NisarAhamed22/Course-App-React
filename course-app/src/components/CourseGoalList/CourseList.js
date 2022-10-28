@@ -5,7 +5,12 @@ const CourseList = (props) => {
   return (
     <ul className="goal-list">
       {props.items.map((listItem) => (
-        <CourseItem key={listItem.id} id={listItem.id} item={listItem.text} />
+        <CourseItem
+          key={listItem.id}
+          id={listItem.id}
+          item={listItem.text}
+          ondelete={props.onDeleteItem}
+        />
       ))}
     </ul>
   );

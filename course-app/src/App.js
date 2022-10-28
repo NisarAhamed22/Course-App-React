@@ -12,9 +12,14 @@ function App() {
   let content = (
     <p style={{ textAlign: "center" }}>No goals found. Maybe add one?</p>
   );
-
+  const deleteItem = (id) => {
+    const deletelist = listData.filter((items) => items.id !== id);
+    setListData(deletelist);
+  };
   if (listData.length > 0) {
-    content = <CourseList items={listData}></CourseList>;
+    content = (
+      <CourseList items={listData} onDeleteItem={deleteItem}></CourseList>
+    );
   }
   const addItem = (prevValue) => {
     const updateList = [...listData];
